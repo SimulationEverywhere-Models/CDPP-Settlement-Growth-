@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDPlusPlus_Builder_Version_1.0.0>
+  <top>
+    <components> Region &#xd;</components>
+  </top>
+  <Region>
+    <type> cell&#xd;</type>
+    <dim> (30,30,3)&#xd;</dim>
+    <delay> inertial&#xd;</delay>
+    <defaultDelayTime> 0&#xd;</defaultDelayTime>
+    <border> nowrapped&#xd;</border>
+    <neighbors> superficie(-1,-1,0) superficie(-1,0,0) superficie(-1,1,0)&#xd;</neighbors>
+    <neighbors> superficie(0,-1,0)  superficie(0,0,0)  superficie(0,1,0)&#xd;</neighbors>
+    <neighbors> superficie(1,-1,0)  superficie(1,0,0)  superficie(1,1,0)&#xd;</neighbors>
+    <neighbors> superficie(-1,-1,1) superficie(-1,0,1) superficie(-1,1,1)&#xd;</neighbors>
+    <neighbors> superficie(0,-1,1)  superficie(0,0,1)  superficie(0,1,1)&#xd;</neighbors>
+    <neighbors> superficie(1,-1,1)  superficie(1,0,1)  superficie(1,1,1)&#xd;</neighbors>
+    <neighbors> superficie(-1,-1,2) superficie(-1,0,2) superficie(-1,1,2)&#xd;</neighbors>
+    <neighbors> superficie(0,-1,2)  superficie(0,0,2)  superficie(0,1,2)&#xd;</neighbors>
+    <neighbors> superficie(1,-1,2)  superficie(1,0,2)  superficie(1,1,2)&#xd;</neighbors>
+    <initialvalue> 0&#xd;</initialvalue>
+    <initialCellsValue> Region.val&#xd;</initialCellsValue>
+    <zone> spread { (0,0,1)..(0,29,1), (3,0,1)..(3,29,1), (6,0,1)..(6,29,1), &#xd;</zone>
+    <zone> edge { (1,0,1)..(1,29,1), (4,0,1)..(4,29,1), (7,0,1)..(7,29,1),&#xd;</zone>
+    <zone> road { (2,0,1)..(2,29,1), (5,0,1)..(5,29,1), (8,0,1)..(8,29,1),&#xd;</zone>
+    <zone> corridor { (0,0,2)..(0,29,2), (3,0,2)..(3,29,2), (6,0,2)..(6,29,2), &#xd;</zone>
+    <zone> city { (1,0,2)..(1,29,2), (4,0,2)..(4,29,2), (7,0,2)..(7,29,2),&#xd;</zone>
+    <zone> eco { (2,0,2)..(2,29,2), (5,0,2)..(5,29,2), (8,0,2)..(8,29,2),&#xd;</zone>
+    <comment>zone : disaster { (0,0,1)..(29,29,1) }&#xd;</comment>
+    <localtransition> RegionBehavior&#xd;</localtransition>
+  </Region>
+  <road>
+    <rule> {(0,0,0)} 100 { t }&#xd;</rule>
+  </road>
+  <corridor>
+    <rule> {(0,0,0)} 100 { t }&#xd;</rule>
+  </corridor>
+  <city>
+    <rule> {(0,0,0)} 100 { t }&#xd;</rule>
+    <comment>[disaster]&#xd;</comment>
+    <comment>rule : {(0,0,0)} 0 { t }&#xd;</comment>
+  </city>
+  <eco>
+    <rule> {(0,0,0)} 100 { t }&#xd;</rule>
+  </eco>
+  <spread>
+    <rule> {1} 100 { (-1,0,0)&gt;0 and (0,0,0)=0 and (1,0,0)=0 }&#xd;</rule>
+    <rule> {1} 100 { (0,0,0)=0 and (1,0,0)=1 }&#xd;</rule>
+    <rule> {1} 100 { (0,-1,0)&gt;0 and (0,0,0)=0 and (0,1,0)=0 }&#xd;</rule>
+    <rule> {1} 100 { (0,0,0)=0 and (0,1,0)=1 }&#xd;</rule>
+    <rule> {(0,0,0)} 100 { t }&#xd;</rule>
+  </spread>
+  <edge>
+    <rule> {0} 100 { (-1,0,0)&gt;0 and (0,0,0)&gt;0 and (1,0,0)=0 }&#xd;</rule>
+    <rule> {1} 100 { (0,0,0)=0 and (1,0,0)=1 }&#xd;</rule>
+    <rule> {0} 100 { (0,-1,0)&gt;0 and (0,0,0)&gt;0 and (0,1,0)=0 }&#xd;</rule>
+    <rule> {1} 100 { (0,0,0)=0 and (0,1,0)=1 }&#xd;</rule>
+    <rule> {(0,0,0)} 100 { t }&#xd;</rule>
+  </edge>
+  <RegionBehavior>
+    <comment> Calculate Gtotal&#xd;</comment>
+    <rule> { randInt(1) + (0,0,1) + (0,0,2) + &#xd;</rule>
+  </RegionBehavior>
+</CDPlusPlus_Builder_Version_1.0.0>

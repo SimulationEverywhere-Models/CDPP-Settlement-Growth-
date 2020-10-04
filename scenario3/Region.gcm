@@ -1,0 +1,17 @@
+# Filename:Region.gcm
+# export classpath:
+# Title:top
+# background:
+# cant units:1
+# 	Unit class:gui.model.unit.EditableCoupledModelUnit
+# 	Unique ID:0
+# 	location x:1
+# 	location y:1
+# 	name:Region
+# 	Filename:Region.gcm
+# 	export classpath:
+# 		class:gui.representation.Square
+# 		height:40
+# 		width:40
+# cant ports:0
+# Cant Links:0

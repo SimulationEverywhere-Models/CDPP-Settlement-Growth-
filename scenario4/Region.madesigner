@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_g6-FYdGVEeeXBNiPRhppWw" modelName="top" defined="true" sourceFileRelativePath="Region.ma">
+    <coupledModels xmi:type="CoupledModelInstance" xmi:id="_g6-FYtGVEeeXBNiPRhppWw" instanceName="Region">
+      <modelType xmi:type="CoupledModelType" xmi:id="_g6-FY9GVEeeXBNiPRhppWw" modelName="Region"/>
+    </coupledModels>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_g6-FZNGVEeeXBNiPRhppWw" type="DEVS" element="_g6-FYdGVEeeXBNiPRhppWw" name="Region.madesigner" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_g6-FZdGVEeeXBNiPRhppWw"/>
+  </notation:Diagram>
+</xmi:XMI>
